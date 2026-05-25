@@ -11,16 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* Variáveis de Cores - Paleta Premium Wellness (Alinhada com o Upsell) */
+        /* Variáveis de Cores - Paleta Premium Wellness */
         :root {
-            --page-bg: #f5f2ee; /* Creme suave para o fundo geral (descanso visual) */
-            --container-bg: #fdfcfb; /* Off-white muito sutil para o bloco de conteúdo */
-            --text-main: #4a413f; /* Marrom acinzentado escuro, menos agressivo que o preto */
-            --heading-color: #5c4742; /* Terracota profundo e elegante */
-            --accent-rose: #d6a39e; /* Rosé suave */
-            --accent-sage: #9cb3a5; /* Verde sage (calma, saúde, suporte) */
+            --page-bg: #f5f2ee; 
+            --container-bg: #fdfcfb; 
+            --text-main: #4a413f; 
+            --heading-color: #5c4742; 
+            --accent-rose: #d6a39e; 
+            --accent-sage: #9cb3a5; 
             --border-light: #efebe8;
-            --shadow-soft: 0 10px 40px rgba(0,0,0,0.06); /* Sombra elegante para o container */
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.06); 
         }
 
         * {
@@ -31,7 +31,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--page-bg); /* Fundo geral escurecido para conforto */
+            background-color: var(--page-bg); 
             color: var(--text-main);
             line-height: 1.6;
             font-size: 16px;
@@ -44,9 +44,8 @@
             font-weight: 500;
         }
 
-        /* Container principal - Agora atua como um 'cartão' sobre o fundo creme */
         .container {
-            max-width: 760px; /* Mais estreito para leitura editorial confortável */
+            max-width: 760px; 
             margin: 40px auto;
             padding: 60px 40px;
             background-color: var(--container-bg);
@@ -209,9 +208,9 @@
             line-height: 1.5;
         }
 
-        /* SEÇÃO 5: BLOCO DE SUPORTE (E-MAIL) */
+        /* SEÇÃO 5: BLOCO DE SUPORTE (E-MAIL E CÓPIA) */
         .support-section {
-            background-color: #f2f6f4; /* Fundo verde sage bem clarinho */
+            background-color: #f2f6f4; 
             padding: 40px;
             border-radius: 16px;
             text-align: center;
@@ -225,7 +224,7 @@
             color: #3b4d42;
         }
 
-        .support-section p {
+        .support-section > p {
             color: #5d7a68;
             margin-bottom: 25px;
             font-size: 16px;
@@ -243,6 +242,7 @@
             padding: 16px 32px;
             border-radius: 40px;
             transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-bottom: 20px;
         }
 
         .btn-email:hover {
@@ -256,11 +256,61 @@
             height: 20px;
         }
 
+        /* Nova caixa de cópia de e-mail para Desktop */
+        .email-fallback {
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .email-fallback span {
+            display: block;
+            font-size: 14px;
+            color: #7b9986;
+            margin-bottom: 8px;
+        }
+
+        .copy-box {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #d1dbd4;
+            padding: 8px 16px 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-box:hover {
+            border-color: var(--accent-sage);
+            box-shadow: 0 4px 10px rgba(156, 179, 165, 0.15);
+        }
+
+        .copy-box strong {
+            color: var(--heading-color);
+            margin-right: 15px;
+            font-size: 15px;
+            user-select: all; /* Permite selecionar o texto fácil */
+        }
+
+        .copy-text {
+            font-size: 12px;
+            color: var(--accent-sage);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background-color: #eaf0ec;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
         .support-microcopy {
             display: block;
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 13px;
             color: #7b9986;
+            border-top: 1px solid #e1e9e4;
+            padding-top: 20px;
         }
 
         /* SEÇÃO 6: GESTÃO DE EXPECTATIVAS */
@@ -315,6 +365,14 @@
                 text-align: center;
                 align-items: center;
                 padding: 25px 20px;
+            }
+            .copy-box {
+                flex-direction: column;
+                padding: 12px 20px;
+                gap: 10px;
+            }
+            .copy-box strong {
+                margin-right: 0;
             }
         }
     </style>
@@ -383,11 +441,20 @@
             <h2>Nós estamos aqui com você</h2>
             <p>Sabemos que começar algo novo pode trazer dúvidas. Caso precise de ajuda com seu acesso ou tenha alguma dúvida sobre a plataforma, nossa equipe estará disponível para lhe atender com carinho, clareza e todo o cuidado necessário.</p>
             
-            <!-- Lembre-se de alterar "suporte@seusite.com.br" para o seu e-mail real -->
             <a href="mailto:sistemarenovacao45@gmail.com" class="btn-email">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                Falar com a Equipe por E-mail
+                Falar com a Equipe
             </a>
+
+            <!-- CAIXA DE CÓPIA PARA DESKTOP/FALLBACK -->
+            <div class="email-fallback">
+                <span>Ou copie o e-mail e envie sua mensagem para:</span>
+                <div class="copy-box" onclick="copiarEmail()">
+                    <strong>sistemarenovacao45@gmail.com</strong>
+                    <span id="copyBtnText" class="copy-text">Copiar</span>
+                </div>
+            </div>
+
             <span class="support-microcopy">Seu contato é privado e seguro. Lhe responderemos com todo o cuidado e sem pressa.</span>
         </section>
 
@@ -404,6 +471,32 @@
         </section>
 
     </div>
+
+    <!-- Script Simples para Copiar o E-mail -->
+    <script>
+        function copiarEmail() {
+            const email = "sistemarenovacao45@gmail.com";
+            
+            // Usa a área de transferência do navegador
+            navigator.clipboard.writeText(email).then(() => {
+                const copyBtn = document.getElementById("copyBtnText");
+                
+                // Muda a cor e o texto para dar feedback visual de sucesso
+                copyBtn.innerText = "Copiado! ✓";
+                copyBtn.style.backgroundColor = "var(--accent-rose)";
+                copyBtn.style.color = "#ffffff";
+                
+                // Retorna ao estado original após 3 segundos
+                setTimeout(() => {
+                    copyBtn.innerText = "Copiar";
+                    copyBtn.style.backgroundColor = "#eaf0ec";
+                    copyBtn.style.color = "var(--accent-sage)";
+                }, 3000);
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+    </script>
 
 </body>
 </html>
