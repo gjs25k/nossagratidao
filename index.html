@@ -11,16 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* Variáveis de Cores - Paleta Premium Wellness */
+        /* Variáveis de Cores - Paleta Premium Wellness (Alinhada com o Upsell) */
         :root {
-            --bg-page: #f9f8f6; /* Creme/Off-white muito suave e aconchegante */
-            --bg-card: #ffffff;
-            --text-main: #544b49; /* Marrom acinzentado escuro, menos agressivo que o preto */
+            --page-bg: #f5f2ee; /* Creme suave para o fundo geral (descanso visual) */
+            --container-bg: #fdfcfb; /* Off-white muito sutil para o bloco de conteúdo */
+            --text-main: #4a413f; /* Marrom acinzentado escuro, menos agressivo que o preto */
             --heading-color: #5c4742; /* Terracota profundo e elegante */
             --accent-rose: #d6a39e; /* Rosé suave */
             --accent-sage: #9cb3a5; /* Verde sage (calma, saúde, suporte) */
             --border-light: #efebe8;
-            --shadow-soft: 0 12px 30px rgba(92, 71, 66, 0.04);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.06); /* Sombra elegante para o container */
         }
 
         * {
@@ -31,7 +31,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-page);
+            background-color: var(--page-bg); /* Fundo geral escurecido para conforto */
             color: var(--text-main);
             line-height: 1.6;
             font-size: 16px;
@@ -44,10 +44,14 @@
             font-weight: 500;
         }
 
+        /* Container principal - Agora atua como um 'cartão' sobre o fundo creme */
         .container {
-            max-width: 740px; /* Mais estreito para leitura editorial confortável */
-            margin: 0 auto;
-            padding: 60px 20px;
+            max-width: 760px; /* Mais estreito para leitura editorial confortável */
+            margin: 40px auto;
+            padding: 60px 40px;
+            background-color: var(--container-bg);
+            box-shadow: var(--shadow-soft);
+            border-radius: 12px;
         }
 
         /* Top Bar de Confirmação */
@@ -89,10 +93,11 @@
 
         /* SEÇÃO 2: VALIDAÇÃO EMOCIONAL */
         .validation-section {
-            background-color: var(--bg-card);
+            background-color: #ffffff;
             padding: 40px;
             border-radius: 16px;
-            box-shadow: var(--shadow-soft);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-light);
             margin-bottom: 40px;
             border-left: 4px solid var(--accent-rose);
         }
@@ -167,18 +172,18 @@
         }
 
         .step-card {
-            background-color: var(--bg-card);
+            background-color: #ffffff;
             padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
-            box-shadow: var(--shadow-soft);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid var(--border-light);
         }
 
         .step-number {
             width: 36px;
             height: 36px;
-            background-color: var(--bg-page);
+            background-color: var(--page-bg);
             color: var(--heading-color);
             border-radius: 50%;
             display: flex;
@@ -287,6 +292,11 @@
 
         /* Responsividade Mobile */
         @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 40px 20px;
+                border-radius: 8px;
+            }
             .hero-section h1 {
                 font-size: 32px;
             }
@@ -371,8 +381,7 @@
         <!-- SEÇÃO 5: BLOCO DE SUPORTE VIA E-MAIL -->
         <section class="support-section">
             <h2>Nós estamos aqui com você</h2>
-            <p>Sabemos que começar algo novo pode trazer dúvidas. Caso precise de ajuda com seu acesso ou tenha alguma dúvida sobre a plataforma, nossa equipe estará disponível para lhe atender com carinho, clareza e todo o cuidado necessário.
-</p>
+            <p>Sabemos que começar algo novo pode trazer dúvidas. Caso precise de ajuda com seu acesso ou tenha alguma dúvida sobre a plataforma, nossa equipe estará disponível para lhe atender com carinho, clareza e todo o cuidado necessário.</p>
             
             <!-- Lembre-se de alterar "suporte@seusite.com.br" para o seu e-mail real -->
             <a href="mailto:suporte@seusite.com.br" class="btn-email">
